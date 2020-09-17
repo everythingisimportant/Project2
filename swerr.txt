@@ -1,0 +1,19 @@
+SESM1_0 SWERR 799 ALERT AUG14 17:26:08:872 MCP_21.0.1.0
+  ManagedCache :: Error in notifying dependent of cache modification.
+    Cache : com.nortelnetworks.ims.base.imdb.group.IMGroupTable@6aae5a91
+    Dependant : class com.nortelnetworks.ims.base.imdb.group.CPUGroupCacheImpl
+    Reason : 21
+    OldData : 
+  [IMCPUGroup:[ID: 3884914][Name: qwe][Domain ID: 476343][Type: 4]] [Max call queue size: 10] [Max Group size: 10] [Active Subscription Allowed: true] [Group Display Name: qweqwe] [Pilot DN ID: 674011]
+    NewData : null
+  
+  com.nortelnetworks.mcp.base.collections.NotFoundException
+  	at com.nortelnetworks.mcp.base.om.fw.RowStorageManager.getRow(RowStorageManager.java:76)
+  	at com.nortelnetworks.mcp.base.om.fw.OMGroupImpl.getRow(OMGroupImpl.java:88)
+  	at com.nortelnetworks.ims.base.imdb.group.CPUGroupCacheImpl.receiveUpdate(CPUGroupCacheImpl.java:985)
+  	at com.nortelnetworks.ims.foundation.imdb.mgmt.ManagedCache.notifyDependents(ManagedCache.java:684)
+  	at com.nortelnetworks.ims.base.imdb.group.IMGroupTable.receiveDataSyncEvent(IMGroupTable.java:433)
+  	at com.nortelnetworks.ims.foundation.imdb.mgmt.DataSyncManager.notifyEventListeners(DataSyncManager.java:194)
+  	at com.nortelnetworks.ims.foundation.imdb.mgmt.TableManager.run(TableManager.java:392)
+  	at com.nortelnetworks.ims.foundation.task.JobTaskB.run(JobTaskB.java:124)
+  	at com.nortelnetworks.ims.foundation.task.TaskThread.run(TaskThread.java:501)
