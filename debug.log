@@ -1,0 +1,10 @@
+Wireshark SSL debug log 
+
+Wireshark version: 3.2.6 (v3.2.6-0-g4f9257fb8ccc)
+GnuTLS version:    3.6.3
+Libgcrypt version: 1.8.3
+
+KeyID[20]:
+| f6 81 05 e5 d5 da 6c 5b f9 f7 c0 56 87 93 db 65 |......l[...V...e|
+| 3c b9 89 fe                                     |<...            |
+ssl_init private key file C:/Users/nmnhat/Desktop/cakey.pem successfully loaded.
