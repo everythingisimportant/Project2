@@ -21,10 +21,10 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
 
-  #battery-charger {
+#battery-charger {
     animation: charge 5s linear infinite, colorChange 5s linear infinite;
-  }
 }
 
 @keyframes charge {
