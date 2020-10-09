@@ -2,18 +2,256 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>This is new edit</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+
+		div {
+			background-color: #80808080;
+		}
+
+		#header {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			min-height: 75px;
+		}
+
+		.logo {
+			width: 60vw;
+		}
+
+		.logo > img {
+			width: 100%;
+			height: 100%;
+			max-width: 300px;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			text-align: center;
+			margin-left: 20px;
+		}
+
+		#header #nav-bar ul {
+			display: flex;
+			width: 35vw;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+
+		#header #nav-bar ul li{
+			list-style: none;
+		}
+
+		section{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background: #80808080;
+		}
+
+		section > form {
+			text-align: center;
+		}
+
+		section input[type='email']{
+			max-width: 275px;
+			width: 100%;
+			padding: 5px;
+		}
+
+		section input[type='submit']{
+			max-width: 150px;
+			width: 100%;
+			height: 30px;
+			padding: 5px;
+			margin: 15px 0;
+			border: 0;
+			background-color: #f1c40f;
+			font-weight: 900;
+			text-transform: uppercase;
+		}
+
+		#container{
+			width: 100%;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		#aboutus, #portfolio, #contactus {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: auto;
+			height: 500px;
+			margin-top: 50px;
+		}
+
+		.grid{
+			display: flex;
+			width: 100%;
+		}
+
+		.icon{
+			display:flex;
+			justify-content: center;
+			align-items: center;
+			color: darkorange;
+			width: 20vw;
+			height: 125px;
+		}
+
+		.description{
+			display:flex;
+			justify-content: center;
+			flex-direction: column;
+			width: 80vw;
+			height: 125px;
+			padding: 5px;
+		}
+
+		footer {
+			margin-top: 30px;
+			padding: 20px;
+		}
+
+		footer > ul {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		footer > ul li {
+			padding: 0 10px;
+			text-decoration: none;
+		}
+
+		footer > span {
+			margin-top: 5px;
+			display: flex;
+			justify-content: flex-end;
+
+		}
+
+		li {
+			list-style: none;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+		}
+
+		#contactus {
+			display:flex;
+			flex-direction: row;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.address {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+
+	</style>
 </head>
 <body>
+	<header id="header">
+		<div class="logo">
+			<img id="header-img" src="https://s3.amazonaws.com/freecodecamp/original_trombones.png" alt="logo website">
+		</div>
+		<nav id="nav-bar">
+			<ul>
+				<li>
+					<a class="nav-link" href="#aboutus">ABOUT US</a>
+				</li>
+				<li>
+					<a class="nav-link"  href="#portfolio">PORTFOLIO</a>
+				</li>
+				<li>
+					<a class="nav-link"  href="#contactus">CONTACT US</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<section id="aboutus">
+		<h2>Welcome, leave your email if you like !</h2>
+		<form id="form">
+			<input id="email" type="email" name="email" placeholder="Enter your email" required>
+			<input id="submit" type="submit" class="button" value="Get info">
+		</form>
+	</section>
+	<div id="container">
+		<section id="aboutus">
+			<div class="grid">
+				<div class="icon"></div>
+				<div class="description">
+					<h2>History</h2>
+					<p>Our trombones use the shiniest brass which is sourced locally. This
+            will increase the longevity of your purchase.</p>
+				</div>
+			</div>
+			<div class="grid">
+				<div class="icon"></div>
+				<div class="description">
+					<h2>History</h2>
+					<p>Our trombones use the shiniest brass which is sourced locally. This
+            will increase the longevity of your purchase.</p>
+				</div>
+			</div>
+			<div class="grid">
+				<div class="icon"></div>
+				<div class="description">
+					<h2>History</h2>
+					<p>Our trombones use the shiniest brass which is sourced locally. This
+            will increase the longevity of your purchase.</p>
+				</div>
+			</div>
+		</section>
+		<section id="portfolio"></section>
+		<section id="contactus">
+			<div class="address">
+				<h2>5213 Bondale Avenue, California US.</h2>
+				<ol>
+					<li>Bondale Avenue</li>
+					<li>California</li>
+					<li>US</li>
+				</ol>
+			</div>
+			<div class="address">
+				<h2>5213 Bondale Avenue, California US.</h2>
+				<ol>
+					<li>Bondale Avenue</li>
+					<li>California</li>
+					<li>US</li>
+				</ol>
+			</div>
+			<div class="address">
+				<h2>5213 Bondale Avenue, California US.</h2>
+				<ol>
+					<li>Bondale Avenue</li>
+					<li>California</li>
+					<li>US</li>
+				</ol>
+			</div>
+		</section>
+		<footer>
+			<ul>
+				<li>
+					<a href="#">Privacy</a>
+				</li>
+				<li>
+					<a href="#">Terms</a>
+				</li>
+				<li>
+					<a href="#">Maps</a>
+				</li>
+			</ul>
+			<span>Copyright 2016, Original Trombones</span>
+		</footer>
+	</div>
 	<script src="1.js"></script>
-	Name: <input type="text" name="fullname"><br>
-	Email: <input type="text" name="email">
-	<button id="1">Submit</button>
-	<p>Nhấn vào để biến mất</p>
-	<p>Nhấn vào để biến mất lần nữa</p>
-	<button id="2">Start animation</button>
-	<button id="3">Click to stop</button>
-	<div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
 </body>
 </html>
