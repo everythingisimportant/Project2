@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<script src="1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	<style>
 
 		div {
@@ -154,9 +157,59 @@
 			align-items: center;
 		}
 
-
+		img {
+			animation: heartbeat 1.7s infinite;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 20px;
+			display: block;
+			width: 40%;
+		}
+		@keyframes heartbeatOut {
+			from {
+				opacity:1
+			}
+			50% {
+				opacity:0;
+				transform:scale(.8)
+			}
+			to {
+				opacity:0;
+				transform:scale(.8)
+			}
+		}
+		@keyframes heartbeat {
+			from {
+				transform:scale3d(1,1,1)
+			}
+			50% {
+				transform:scale3d(1.15,1.15,1.15)
+			}
+			to {
+				transform:scale3d(1,1,1)
+			}
+		}
 	</style>
+	
+    <script>
+	var arr1 = []; var c = 1;
+    $(document).ready(function(){
+        $("button").click(function(){
+    		var x = setInterval(function(){
+		    $.ajax ({
+			        url: `https://pokeapi.co/api/v2/berry/${c}`,
+			        type: "GET",
+			    }).done(function(data) {
+			        console.log(data.name); arr1.push(data.name);
+			    }).fail(function(data, err) {
+			        console.log(`Fail: https://pokeapi.co/api/v2/berry/${c} ` + JSON.stringify(data.responseText) + " " + JSON.stringify(err));
+		        }); c++; if (c > 5) {clearInterval(x)}}, 1000)
+	    });
+    });
+    </script>
+
 </head>
+
 <body>
 	<header id="header">
 		<div class="logo">
@@ -252,6 +305,41 @@
 			<span>Copyright 2016, Original Trombones</span>
 		</footer>
 	</div>
-	<script src="1.js"></script>
+
+	Name: <input type="text" name="fullname"><br>
+	Email: <input type="text" name="email">
+	<button id="1">Submit</button>
+	<p>Nhấn vào để biến mất</p>
+	<p>Nhấn vào để biến mất lần nữa</p>
+	<button id="2">Start animation</button>
+	<button id="3">Click to stop</button>
+	<div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+    <div id="txt" style="text-align: center;font-size: 50px;font-weight: bold;color: red;margin: 50px auto;"></div>
+	<img src="k.png">
+	<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fs%C4%A9-c%C3%B4ng-nguy%E1%BB%85n%2Fcu%E1%BB%99c-s%E1%BB%91ng-m%C3%A0-vietmixx-deep-mixset%2F" frameborder="0" ></iframe>
+    <button id="button">CLICK HERE TO RUN API</button>
+    <script type="text/javascript">
+	    function startTime() {
+	  var today = new Date();
+	  var h = today.getHours();
+	  var m = today.getMinutes();
+	  var s = today.getSeconds();
+	  // add a zero in front of numbers<10
+	  m = checkTime(m);
+	  s = checkTime(s);
+	  document.getElementById("txt").innerHTML = h+":"+m+":"+s;
+	  t = setTimeout(function(){ startTime() }, 1000);
+	}
+
+	function checkTime(i) {
+	  if (i<10) {
+	    i = "0" + i;
+	  }
+	  return i;
+	}
+
+	startTime();
+	</script>
+
 </body>
 </html>
